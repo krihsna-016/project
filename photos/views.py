@@ -88,20 +88,35 @@ def ImageDownloadView(request, pk):
     # return response
     return render(response, 'photos/photo.html', {'download': response})
 
+
+
 # instance.image, content_type="image/jpeg"
+# import boto
+# from boto.s3.key import Key
+# from django.conf import settings
+
+
+# def s3_delete(request, id):
+#     s3conn = boto.connect_s3(settings.AWS_ACCESS_KEY_ID,settings.AWS_SECRET_ACCESS_KEY)
+#     bucket = s3conn.get_bucket(settings.AWS_STORAGE_BUCKET_NAME)
+
+#     k = Key(bucket)
+#     k.key = str(id)
+#     k.delete()
+
+
+
 import boto
 from boto.s3.key import Key
 from django.conf import settings
 
-
 def s3_delete(id):
-    s3conn = boto.connect_s3(settings.AWS_ACCESS_KEY,
+    s3conn = boto.connect_s3(settings.AWS_ACCESS_KEY_ID,
             settings.AWS_SECRET_ACCESS_KEY)
-    bucket = s3conn.get_bucket(settings.S3_BUCKET)
+    bucket = s3conn.get_bucket(settings.AWS_STORAGE_BUCKET_NAME)
 
     k = Key(bucket)
-    k.key = str(id)
-    k.delete()
+    print(k)
 
 
 
