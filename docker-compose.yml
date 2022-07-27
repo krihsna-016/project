@@ -1,0 +1,22 @@
+version: '3'
+  
+networks:
+  web:
+    external: true
+  internal:
+    external: false
+
+services:
+  c-storage:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/c-storage
+    labels:
+      - traefik.http.routers.20a91f0016.rule=Host(`20a91f0016.platfom.live`)
+      - traefik.http.routers.20a91f0016.tls=true
+      - traefik.http.routers.20a91f0016.tls.certresolver=lets-encrypt
+      - traefik.port=8000
+    networks:
+      - web
+      - internal
