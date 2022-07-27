@@ -25,7 +25,7 @@
     </style>
 </head>
 
-<body class="m-5">
+<body class="m-5" style="background-color:powderblue;">
 
     <div class="container">
         <div class="row">
@@ -60,7 +60,7 @@
                             <img class="image-thumbail" src="{{photo.image.url}}" alt="Card image cap">
 
                             <div class="card-body">
-                                <small><b >Category: {{photo.category.name}}</b></small>
+                                <small><b>Category: {{photo.category.name}}</b></small>
                             </div>
                             <a href="{% url 'photo' photo.id %}" class="btn btn-dark btn-sm m-1"><b>View</b></a>
                             <a href="{{photo.image.url}}" class="btn btn-success btn-sm m-1"><b>Download</b></a>

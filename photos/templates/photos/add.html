@@ -11,7 +11,7 @@
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
 </head>
-<body class="m-5">
+<body class="m-5" style="background-color:powderblue;">
     <div class="container">
 
         <div class="row justify-content-center">
@@ -19,18 +19,18 @@
                 
                 <div class="card">
 
-                    <form method='POST' action="" enctype="multipart/form-data">
+                    <form method='POST' action="" enctype="multipart/form-data" style="background-color:powderblue;">
                         {% csrf_token %}
 
                         <div class="form-group m-3">
                             <label><b>Description</b></label>
                             <input required name="description" type="text" placeholder="Enter a description"
-                                class="form-control" style="background-color: palegoldenrod;">
+                                class="form-control" style="background-color:powderblue;">
                         </div>
 
                         <div class="form-group m-3">
                             <label><b>Select a category</b></label>
-                            <select name="category" class="form-control" style="background-color: palegoldenrod;">
+                            <select name="category" class="form-control" style="background-color:powderblue;">
                                 <option value='none'>Select a category...</option>
 
                                 {% for category in categories %}
@@ -42,15 +42,15 @@
                         <div class="form-group m-3">
                             <label><b>Create a new category</b></label>
                             <input name="category_new" type="text" placeholder="Create a new category"
-                                class="form-control" style="background-color: palegoldenrod;">
+                                class="form-control" style="background-color:powderblue;">
                         </div>
 
                         <div class="form-group m-3">
                             <label><b>Upload image</b></label>
-                            <input required name="images" type="file" multiple class="form-control-file" style="background-color: palegoldenrod;">
+                            <input required name="images" type="file" multiple class="form-control-file" style="background-color:powderblue;">
                         </div>
-                        <button type='submit' class="btn btn-primary m-3" style="background-color: palegoldenrod;"><b>Submit</b>t</button>
-                        <a href="{% url 'gallery' %}" class="btn btn-dark my-3" style="background-color: palegoldenrod;"><b>Go Back</b></a>
+                        <button type='submit' class="btn btn-primary-dark m-3" style="background-color: rgb(236, 217, 10);"><b>Submit</b>t</button>
+                        <a href="{% url 'gallery' %}" class="btn btn-primary-dark my-3" style="background-color: rgb(236, 217, 10);"><b>Go Back</b></a>
                     </form>
                 </div>
             </div>
